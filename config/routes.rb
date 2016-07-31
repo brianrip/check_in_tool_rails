@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     resources :activities
   end
 
+  namespace :callbacks do
+    get '/notifications', controller: 'google', action: 'watch'
+  end
+
   get '/compass', controller: 'compass', action: 'show', as: :compass
   get '/logout', controller: 'compass', action: 'logout', as: :logout
 end
